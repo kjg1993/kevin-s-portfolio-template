@@ -12,227 +12,359 @@
 * {
 	box-sizing: border-box;
 	font-family: var(--main-font);
-}
-
-header {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 90%;
-	display: flex;
-	justify-content: space-between;
-	padding: 40px 100px;
-	z-index: 10000;
-	transition: 0.6s;
-}
-
-header .logo {
-	position: relative;
-	font-weight: 700;
-	color: #fff;
 	text-decoration: none;
-	font-size: 2em;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-family: var(--main-font);
-	transition: 0.6s;
 }
 
-header #toggle {
-	position: relative;
-	width: 30px;
-	height: 30px;
-	cursor: pointer;
-}
+/* Navbar Stiling */
 
-header #toggle::before {
-	content: "";
-	position: absolute;
-	top: 7px;
+header .navbar {
+	position: fixed;
 	width: 100%;
-	height: 2px;
-	background: #fff;
+	/* background-color: crimson; */
+	padding: 30px;
+	z-index: 9;
 }
 
-header #toggle::after {
-	content: "";
-	position: absolute;
-	bottom: 7px;
-	width: 100%;
-	height: 2px;
-	background: #fff;
+.max-width {
+	max-width: 1400px;
+	margin: auto;
 }
 
-.banner.active header #toggle::before {
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.banner.active header #toggle::after {
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-section.banner {
-	position: relative;
-	max-width: 100%;
-	min-height: 100vh;
-	background: url("../assets/bg.jpg");
-	background-size: cover;
+header .navbar .max-width {
 	display: flex;
 	align-items: center;
-	transition: 0.5s;
-	z-index: 2;
+	justify-content: space-between;
 }
 
-.banner.active {
-	transform: translate(-400px);
+header .navbar .logo a {
+	color: var(--welcome-name-color);
+	font-size: 35px;
+	font-weight: 700;
+	letter-spacing: 2px;
 }
 
-#navigation {
-	position: fixed;
-	top: 0;
-	right: -200px;
-	width: 400px;
+header .navbar .logo a span {
+	color: crimson;
+}
+
+header .navbar .menu li {
+	list-style: none;
+	display: inline-block;
+}
+
+header .navbar a {
+	color: var(--welcome-name-color);
+	font-size: 18px;
+	font-weight: 700;
+	margin: 0 0 0 40px;
+	transition: color 0.3s ease;
+}
+
+header .navbar a:hover {
+	color: crimson;
+}
+
+/* menu styling  */
+
+.fas {
+	color: var(--welcome-name-color);
+	font-size: 32px;
+	cursor: pointer;
+	display: none;
+}
+
+/* Home section styling */
+
+section.home {
+	display: flex;
+	background: url("../assets/bg.jpg") no-repeat center;
 	height: 100vh;
-	background: var(--Projects-Contac-footer-color);
-	z-index: 1;
-	display: grid;
-	place-items: center;
-	transition: 0.5s;
-}
-
-#navigation.active {
-	right: 0;
-}
-
-#navigation ul {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-}
-
-#navigation ul li {
-	list-style: none;
-}
-
-#navigation ul li a {
+	width: 100%;
+	min-height: 500px;
 	color: #fff;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 2em;
-	font-weight: bold;
-	text-transform: uppercase;
-	font-family: var(--main-font);
-	padding: 0.5em;
 }
 
-.content {
-	max-width: 600px;
-	margin: 0 0 0 3em;
+section.home .max-width {
+	margin: auto 0 auto 40px;
 }
 
-.content h2 {
-	color: var(--welcome-name-color);
-	font-size: 2.5em;
+section.home .homeContent .text-1 {
+	font-size: 27px;
 }
 
-.content h2 span {
-	color: #40c3ff;
-	font-size: 1.2em;
+section.home .homeContent .text-2 {
+	font-size: 75px;
+	font-weight: 600px;
+	margin: 0 0 0 -3px;
+}
+section.home .homeContent .text-3 {
+	font-size: 40px;
+	margin: 5px 0;
 }
 
-.content p {
-	font-size: 1.2em;
-	color: var(--welcome-name-color);
-	font-weight: 300;
+section.home .homeContent .text-3 span {
+	color: crimson;
 }
 
-.content a {
+/* About section styling  */
+section.about {
+	padding: 100px 0;
+}
+
+section .title {
 	position: relative;
-	display: inline-block;
-	margin-top: 20px;
-	background: var(--welcome-name-color);
-	color: var(--Projects-Contac-footer-color);
-	padding: 10px 30px;
-	text-decoration: none;
-	font-size: 1.2em;
-	font-weight: bold;
+	text-align: center;
+	font-size: 40px;
+	font-weight: 700;
+	margin: 0 0 60px 0;
+	padding: 0 0 20px 0;
 }
 
-.sci {
+section .title::before {
+	content: "";
 	position: absolute;
-	display: flex;
-	flex-direction: column;
-	right: 100px;
+	bottom: 0px;
+	left: 50%;
+	width: 190px;
+	height: 3px;
+	background: #111;
+	transform: translateX(-50%);
 }
 
-.sci li {
-	list-style: none;
-}
-
-.sci li a {
-	position: relative;
-	display: grid;
-	place-items: center;
-	width: 50px;
-	height: 50px;
-	text-decoration: none;
-	border: 1px solid var(--welcome-name-color);
-}
-
-.sci li a:hover {
+section .title::after {
+	content: "Who i am";
+	position: absolute;
+	bottom: -12px;
+	left: 50%;
+	font-size: 20px;
+	color: crimson;
 	background: var(--welcome-name-color);
+	transform: translateX(-50%);
 }
 
-.sci li a img {
-	max-width: 30px;
-	filter: invert(1);
-	mix-blend-mode: difference;
+section .about-content,
+.services .serv-content,
+.skills .skills-content {
+	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
 }
 
-@media (max-width: 767px) {
-	header {
-		padding: 20px 50px;
-	}
-
-	.banner {
-		padding: 100px 50px 150px;
-	}
-
-	.banner h2 {
-		font-size: 1.8em;
-	}
-
-	.banner .content p,
-	.banner .content a {
-		font-size: 1em;
-	}
-
-	.banner.active {
-		transform: translateX(-250px);
-	}
-
-	#navigation {
-		width: 250px;
-	}
-
-	#navigation ul li a {
-		font-size: 1.5em;
-		margin: 5px 0;
-	}
-
-	.sci {
-		position: absolute;
-		bottom: 50px;
-		right: initial;
-		flex-direction: row;
-	}
-
-	.sci li a {
-		margin: initial;
-		margin-right: 10px;
-	}
+.services .serv-content {
+	padding: 90px;
 }
+
+section .about-content .left {
+	display: flex;
+	justify-content: center;
+	width: 50%;
+}
+
+section .about-content .left img {
+	max-height: 400px;
+	max-width: 400px;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+section .about-content .right {
+	display: flex;
+	justify-content: center;
+	width: 50%;
+}
+
+section .about-content .text {
+	width: 80%;
+	padding: 0 0 0 30px;
+}
+
+section .about-content .text h2 {
+	font-size: 25px;
+	font-weight: 600;
+	margin: 0 0 10px 0;
+}
+
+section .about-content .text h2 span {
+	color: crimson;
+}
+
+/* Services styling start here  */
+
+.services {
+	background: #111;
+	color: var(--welcome-name-color);
+}
+
+.services .titleServices::before {
+	content: "";
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	width: 230px;
+	height: 3px;
+	background: var(--welcome-name-color);
+	transform: translateX(-50%);
+}
+
+.services .titleServices::after {
+	content: "What i provide";
+	position: absolute;
+	bottom: -12px;
+	left: 50%;
+	font-size: 20px;
+	color: crimson;
+	background: #111;
+	transform: translateX(-50%);
+}
+
+.services .titleServices {
+	position: relative;
+	text-align: center;
+	font-size: 40px;
+	font-weight: 700;
+	margin: 0 0 60px 0;
+	padding: 60px 0 20px 0;
+}
+
+.services .serv-content .card {
+	width: calc(33% - 20px);
+	background: #222;
+	text-align: center;
+	margin: 20px 25px;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+}
+
+.services .serv-content .card .box {
+	transition: all 0.3s ease;
+}
+
+.services .serv-content .card:hover .box {
+	transform: scale(1.05);
+}
+
+.services .serv-content .card img {
+	width: 62.5px;
+	height: 60px;
+	filter: opacity(0.4) drop-shadow(0 0 0 red);
+}
+
+.services .serv-content .card:hover {
+	background: crimson;
+	filter: opacity(0.4) drop-shadow(0 0 0 white);
+}
+
+/* Section Skills styling  */
+
+.skills .title::after {
+	content: "What i know";
+}
+
+.skills .skills-content {
+	padding: 0 20px 40px 0;
+}
+
+.skills .skills-content .column {
+	width: calc(50% - 30px);
+}
+
+.skills .title {
+	margin: 0 0 60px 0;
+	padding: 60px 0 20px 0;
+}
+
+.skills .skills-content .left p {
+	width: 80%;
+	text-align: justify;
+}
+
+.skills .skills-content .right .bars {
+	margin: 15px;
+}
+
+.skills .skills-content .right .info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.skills .skills-content .right .info span {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.skills .skills-content .right .line {
+	height: 5px;
+	width: 100%;
+	background: lightgrey;
+	position: relative;
+}
+
+.skills .skills-content .right .line::before {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: 80%;
+	left: 0;
+	top: 0;
+	background: crimson;
+}
+
+.skills .skills-content .right .html::before {
+	width: 90%;
+}
+
+.skills .skills-content .right .css::before {
+	width: 65%;
+}
+
+.skills .skills-content .right .js::before {
+	width: 60%;
+}
+
+.skills .skills-content .right .py::before {
+	width: 40%;
+}
+
+.skills .skills-content .right .Github::before {
+	width: 50%;
+}
+
+/* Responsive media Query Start here */
+/* 
+@media (max-width: 991px) {
+	.max-width {
+		padding: 0 50px;
+	}
+
+	header .navbar .menu {
+		color: var(--welcome-name-color);
+		display: block;
+		z-index: 9;
+	}
+
+	header .navbar .menu {
+		position: fixed;
+		height: 100vh;
+		width: 100%;
+		left: 0;
+		top: 0;
+		background-color: #111;
+		text-align: center;
+		padding: 80px 0 0 0;
+	}
+
+	header .navbar .menu li {
+		display: block;
+	}
+
+	header .navbar .menu li a {
+		display: inline-block;
+		margin: 20px 0;
+		font-size: 25px;
+	}
+} */
