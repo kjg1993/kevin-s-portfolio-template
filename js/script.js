@@ -4,3 +4,5 @@
 // 	sec.classList.toggle("active");
 // 	nav.classList.toggle("active");
 // }
+
+let observer = new IntersectionObserver();

@@ -144,7 +144,8 @@ section .title::after {
 
 section .about-content,
 .services .serv-content,
-.skills .skills-content {
+.skills .skills-content,
+.contact .contact-content {
 	width: 100%;
 	display: flex;
 	flex-wrap: nowrap;
@@ -153,7 +154,8 @@ section .about-content,
 }
 
 .services .serv-content {
-	padding: 90px;
+	padding: 0 60px;
+	margin: -80px 0 0 0;
 }
 
 section .about-content .left {
@@ -219,12 +221,15 @@ section .about-content .text h2 span {
 	transform: translateX(-50%);
 }
 
+.services .serv-content {
+	height: 100vh;
+}
+
 .services .titleServices {
 	position: relative;
 	text-align: center;
 	font-size: 40px;
 	font-weight: 700;
-	margin: 0 0 60px 0;
 	padding: 60px 0 20px 0;
 }
 
@@ -266,6 +271,7 @@ section .about-content .text h2 span {
 
 .skills .skills-content {
 	padding: 0 20px 40px 0;
+	height: 100vh;
 }
 
 .skills .skills-content .column {
@@ -277,8 +283,12 @@ section .about-content .text h2 span {
 	padding: 60px 0 20px 0;
 }
 
+.skills .skills-content {
+	height: 69vh;
+}
+
 .skills .skills-content .left p {
-	width: 80%;
+	width: 90%;
 	text-align: justify;
 }
 
@@ -334,6 +344,144 @@ section .about-content .text h2 span {
 	width: 50%;
 }
 
+/* Contact Section styling */
+.contact .title::before {
+	background: var(--welcome-name-color);
+}
+
+.contact .title::after {
+	content: "get in touch";
+	color: crimson;
+	background: #111;
+}
+
+.contact {
+	background-color: #111;
+	padding: 30px;
+	color: var(--welcome-name-color);
+	height: 100vh;
+}
+
+.contact .title {
+	color: var(--welcome-name-color);
+}
+
+.contact .contact-content .column {
+	width: calc(50% - 30px);
+}
+
+.contact .contact-content .text {
+	font-size: 20px;
+	font-weight: 600;
+	margin: 0 0 10px 0;
+}
+
+.contact .contact-content .left p {
+	text-align: justify;
+}
+
+.contact .contact-content .icons {
+	margin: 10px 0;
+}
+
+.contact .contact-content .row {
+	display: flex;
+	height: 65px;
+	align-items: center;
+}
+
+.contact .contact-content .row img {
+	width: 40px;
+	height: 40px;
+	margin: 5px;
+	filter: opacity(0.4) drop-shadow(0 0 0 white);
+}
+
+.contact .contact-content .info {
+	margin: 0 0 0 15px;
+}
+
+.contact .contact-content .row .head {
+	font-weight: 600;
+}
+
+.contact .right {
+	margin: 0 auto;
+}
+
+.contact .right form .field,
+.contact .right form .fields .field {
+	height: 45px;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.contact .right form .fields {
+	display: flex;
+}
+
+.contact .right form .name {
+	margin: 0 10px 0 0;
+}
+
+.contact .right form .email {
+	margin: 0 0 10px 0;
+}
+
+.contact .right form .textarea {
+	height: 80px;
+}
+
+.contact .right form .field input,
+.contact .right form .textarea textarea {
+	width: 100%;
+	height: 100%;
+	border: 1px solid lightgrey;
+	border-radius: 6px;
+	outline: none;
+	padding: 0 15px;
+	font-size: 17px;
+}
+
+.contact .right form textarea {
+	resize: none;
+}
+
+.contact .right form .button {
+	height: 47px;
+	width: 170px;
+}
+
+.contact .right form .button button {
+	width: 100%;
+	height: 100%;
+	border: 2px solid crimson;
+	background: crimson;
+	color: var(--welcome-name-color);
+	font-size: 20px;
+	font-weight: 500;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.contact .right form .button button:hover {
+	border: 1px solid crimson;
+	background: none;
+}
+
+footer {
+	text-align: center;
+	padding: 20px;
+}
+
+footer span a {
+	color: crimson;
+}
+
+footer span a:hover {
+	text-decoration: underline;
+}
 /* Responsive media Query Start here */
 /* 
 @media (max-width: 991px) {
