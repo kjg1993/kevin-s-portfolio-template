@@ -482,6 +482,11 @@ footer span a {
 footer span a:hover {
 	text-decoration: underline;
 }
+
+header .nav-scrolled {
+	background: crimson;
+	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+}
 /* Responsive media Query Start here */
 /* 
 @media (max-width: 991px) {
